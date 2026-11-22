@@ -16,3 +16,7 @@ The verifier enumerates 29,269 partitions of 59 into parts of size at least 3. T
 The saved `sieve59.json` also preserves the historical odd-cycle-filtered diagnostic. Its 12 moment survivors are a separate count from the 15 in the parity-free proof. The current replay covers the full parity-free census.
 
 `SHA256SUMS` records the exact published Python and JSON bytes. The reviewed manuscript source before the public-link and disclosure edits has SHA-256 `53988caa036a1c2043c52d22eefb83a054a7be795f8ba1ebcb6e594aa45620ee`.
+
+## Formal proof
+
+The [standalone Lean project](lean/) contains the full kernel proof. Its final declaration is [`Symconf59.no_unrestricted_incidence59`](lean/Symconf59/Unrestricted59.lean), which states the unrestricted incidence-matrix theorem.
