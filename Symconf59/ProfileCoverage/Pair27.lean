@@ -1,0 +1,15 @@
+module
+
+public import Symconf59.ProfileMarkedCheck
+
+@[expose] public section
+
+namespace Symconf59
+
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+
+theorem checkPair_16_10 : pairKeyCoverage 16 10=true :=
+  pair_with_marks 16 10 "QKKQKKQDQDQQQQKKQKQQGQQKQKQQQKQQQQQKKQHHHHQKKQHHQKQHKQKKKQQKGQKQKDQQQKKKKIDDIKKKIGKKIKKKHHHKKHKKKKGKKKKDKKKKHKKKKKQKKQKQQJQKQJQQKQQQKQHHKQQKQKQKKKIKJKKHKKKKQKQQQGQKQKKQQKDQDQQQKQGQKQQHHHQHQHQQQKDDIKGKHHDHKQJJQHQKJQQQQQQQIJQ" (by decide +kernel)
+
+end Symconf59

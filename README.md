@@ -1,22 +1,10 @@
-# Checker for symmetric configuration 59₈
+# There is no symmetric configuration 59₈
 
-This is the computational companion to John Tripodo’s six-page manuscript *There is no symmetric configuration 59₈*. The theorem excludes every symmetric incidence configuration with 59 points and 59 lines, eight incidences per point and per line, and at most one common line for any two distinct points.
+This Lean project verifies the nonexistence of a symmetric incidence configuration with 59 points and 59 lines, eight incidences at each point and line, and at most one line through any two distinct points. `Challenge.lean` states the theorem as an explicit condition on binary integer matrices. `Solution.lean` proves it using the ported original proof.
 
-The replay uses the Python 3 standard library and exact integer and rational arithmetic. From this directory, run:
+- [Paper on Hexagon](https://hexagonmath.org/2611.00901v1)
+- [Original Lean proof and Python checker](https://github.com/jjtripodo-lgtm/symconf59-checker/tree/71db581317719397e01fa182cdce91358a444b0b)
 
-```sh
-sha256sum -c SHA256SUMS
-python3 verify59.py
-python3 -O verify59.py
-python3 -m unittest -v
-```
+The project pins Lean 4.35.0-rc2 and Mathlib. Build the two targets with `lake build Challenge Solution` and compare them with `lake comparator --config comparator.json --paranoid`. The mechanical preflight runs Palomar's pinned verification workflow.
 
-The verifier enumerates 29,269 partitions of 59 into parts of size at least 3. The moment tests retain 15 profiles, and all 12 shift exclusions reduce those to three. The verifier checks both mixed-profile exclusions and the anisotropic kernel form modulo 353 for the single-cycle case. It also checks the determinant and Hasse cross-checks and compares the replay against the three saved JSON certificates. The test suite deliberately corrupts certificate copies and breaks the moment sieve to check that optimized Python still rejects bad inputs.
-
-The saved `sieve59.json` also preserves the historical odd-cycle-filtered diagnostic. Its 12 moment survivors are a separate count from the 15 in the parity-free proof. The current replay covers the full parity-free census.
-
-`SHA256SUMS` records the exact published Python and JSON bytes. The reviewed manuscript source before the public-link and disclosure edits has SHA-256 `53988caa036a1c2043c52d22eefb83a054a7be795f8ba1ebcb6e594aa45620ee`.
-
-## Formal proof
-
-The [standalone Lean project](lean/) contains the full kernel proof. Its final declaration is [`Symconf59.no_unrestricted_incidence59`](lean/Symconf59/Unrestricted59.lean), which states the unrestricted incidence-matrix theorem.
+The formalization and port used AI assistance. See `formalization.yaml` for provenance and review scope. This release is licensed under Apache-2.0.

@@ -1,0 +1,46 @@
+version: v0.4
+project:
+  name: "There is no symmetric configuration 59₈"
+  description: >-
+    No symmetric incidence configuration exists with 59 points and 59 lines,
+    eight incidences at every point and line, and at most one common line for
+    any two distinct points. The compared declaration states the equivalent
+    binary integer incidence-matrix theorem. It places no restriction on the
+    automorphism group or the cycle types of the leave graphs. The proof
+    derives leave-graph constraints from an arbitrary incidence matrix and
+    closes the resulting finite cases in Lean. Davydov, Faina, Giulietti,
+    Marcugini and Pambianco distinguish this unrestricted case, listed as
+    undecided in their Table 7.1, from the cyclic case in Table 6.1.
+  authors: ["John Tripodo"]
+  responsible_maintainers: ["John Tripodo"]
+  license: Apache-2.0
+classification:
+  arxiv: [math.CO]
+  msc2020: ["05B30", "05B05", "68V20"]
+sources:
+  - title: "There is no symmetric configuration 59₈"
+    type: preprint
+    relationship: formalizes
+    authors: ["John Tripodo"]
+    location: "https://hexagonmath.org/2611.00901v1"
+    note: "The main nonexistence theorem is compared. The submitted proof is a port of the already public Lean development accompanying the preprint."
+  - title: "Checker for symmetric configuration 59₈"
+    type: software
+    relationship: adapts
+    authors: ["John Tripodo"]
+    location: "https://github.com/jjtripodo-lgtm/symconf59-checker/tree/71db581317719397e01fa182cdce91358a444b0b"
+    note: "Original proof source. The companion Python computations were replayed for reproducibility and are not imported by the compared Lean proof."
+  - title: "On constructions and parameters of symmetric configurations v_k"
+    type: paper
+    relationship: background
+    authors: ["Alexander A. Davydov", "Giorgio Faina", "Massimo Giulietti", "Stefano Marcugini", "Fernanda Pambianco"]
+    location: "https://arxiv.org/abs/1203.0709"
+    note: "Tables 6.1 and 7.1 separate the cyclic and unrestricted parameter problems."
+automation:
+  methods:
+    - method: agent
+      tool_setup: "AI-assisted proof development and Lean formalization as disclosed on Hexagon, and ChatGPT/Codex for the Palomar port."
+  notes: "John Tripodo directed the development and is the human author and maintainer. The cited preprint discloses the roles of AI tools and the author’s review scope."
+review:
+  status: unchecked
+  notes: "The original public repository records its Lean replay. No independent human referee review is claimed."
